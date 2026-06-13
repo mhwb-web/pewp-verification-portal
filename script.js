@@ -1,12 +1,41 @@
-function verifyCertificate(){
+const API_URL =
+"https://script.google.com/macros/s/AKfycbwsOY1OUDXxhGqtT4DLoMaEn7ONMq_Y1kWtsVa1m2IDebtfb5NDRUNzD38QmyJjimh3/exec";
 
-const certNo =
-document.getElementById("certNo").value;
+async function verifyCertificate() {
 
-google.script.run
-.withSuccessHandler(showResult)
-.verifyCertificate(certNo);
+  const certNo =
+    document.getElementById("certNo").value.trim();
 
+  if (!certNo) {
+    alert("Please enter Certificate Number");
+    return;
+  }
+
+  document.getElementById("result").innerHTML =
+    '<div class="card">Verifying...</div>';
+
+  try {
+
+    const response = await fetch(
+      `${API_URL}?certNo=${encodeURIComponent(certNo)}`
+    );
+
+    const data = await response.json();
+
+    showResult(data);
+
+  } catch (error) {
+
+    document.getElementById("result").innerHTML = `
+      <div class="card">
+        <div class="notfound">
+          ❌ Unable to connect to verification server
+        </div>
+      </div>
+    `;
+
+    console.error(error);
+  }
 }
 
 function showResult(data){
