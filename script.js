@@ -16,9 +16,10 @@ async function verifyCertificate() {
 
   try {
 
-    const response = await fetch(
-      `${API_URL}?certNo=${encodeURIComponent(certNo)}&t=${Date.now()},{ cache: "no-store"}`
-    );
+   
+      const response = await fetch( 
+      `${API_URL}?certNo=${encodeURIComponent(certNo)}` );
+    
 
     const data = await response.json();
     showResult(data);
