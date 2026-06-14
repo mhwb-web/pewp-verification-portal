@@ -86,10 +86,7 @@ html=`
 
 <tr>
   <td>Employee ID</td>
-  <td>${((id) => {
-    const s = String(id);
-    return "*".repeat(s.length - 2) + s.slice(-2);
-})(data.employeeId)}</td>
+  <td>${data.employeeId}</td>
 </tr>
 
 <tr>
@@ -143,3 +140,15 @@ html=`
 document.getElementById("result").innerHTML=html;
 
 }
+
+
+{/* <tr>
+  <td>Employee ID</td>
+  <td>${((id) => {
+    const s = String(id);
+    return "*".repeat(s.length - 2) + s.slice(-2);
+})(data.employeeId)}</td>
+</tr> */}
+
+
+
