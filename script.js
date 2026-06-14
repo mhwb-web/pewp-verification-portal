@@ -87,8 +87,8 @@ html=`
 </tr>
 
 <tr>
-<td>Employee ID</td>
-<td>${data.employeeId}</td>
+  <td>Employee ID</td>
+  <td>${((id) => "*".repeat(Math.max(0, id.length - 2)) + id.slice(-2))(data.employeeId)}</td>
 </tr>
 
 <tr>
