@@ -21,7 +21,6 @@ async function verifyCertificate() {
     );
 
     const data = await response.json();
-
     showResult(data);
 
   } catch (error) {
@@ -90,23 +89,18 @@ html=`
 </tr>
 
 <tr>
-<td>Merged Doc ID</td>
+<td>Document ID</td>
 <td>${data.mergedDocId}</td>
 </tr>
 
 <tr>
-<td>Merged Doc URL</td>
-<td>${data.mergedDocUrl}</td>
-</tr>
-
-<tr>
-<td>Merged Document Name</td>
+<td>Document Name</td>
 <td>${data.mergedDocLink}</td>
 </tr>
 
 <tr>
-<td>Document Merge Status</td>
-<td>${data.mergeStatus}</td>
+<td>Document Created </td>
+<td>Document successfully created on ${data.mergeStatus .split("Timestamp:")[1] ?.trim() || ""}</td>
 </tr>
 <tr>
 <td>Program Attended As</td>
