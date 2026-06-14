@@ -100,7 +100,7 @@ html=`
 </tr>
 
 <tr>
-<td>Link to Merged Doc</td>
+<td>Merged Document Name</td>
 <td>${data.mergedDocLink}</td>
 </tr>
 
@@ -108,21 +108,18 @@ html=`
 <td>Document Merge Status</td>
 <td>${data.mergeStatus}</td>
 </tr>
-
+<tr>
+<td>Program Attended As</td>
+<td>${data.role}</td>
+</tr>
 </table>
 
 <div class="actions">
 
 <a class="btn"
-href="${data.certificateUrl}"
-target="_blank">
-View Certificate
-</a>
-
-<a class="btn"
-href="${data.mergedDocLink}"
-target="_blank">
-Open Merged Document
+href="mailto:mhwb@mnnit.ac.in?subject=Certificate Access Request - ${data.certificateNo}&body=Dear MHWB Team,%0D%0A%0D%0AI would like to request access to view my certificate.%0D%0A%0D%0ACertificate Number: ${data.certificateNo}%0D%0AName: ${data.name}%0D%0AInstitute: ${data.institute}%0D%0AEmail: ${data.email}%0D%0A%0D%0ARegards,"
+>
+Request Certificate Access
 </a>
 
 </div>
